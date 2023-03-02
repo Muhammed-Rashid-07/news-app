@@ -1,12 +1,16 @@
 import React from 'react'
-import { paypal } from './assets'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import Card from './components/Card'
 import NavBar from './components/NavBar'
+
 
 const App = () => {
   return (
-    <div className=''>
-      <NavBar/>
+    <div>
+      <NavBar />
+      <Card />
     </div>
+
   )
 }
 
