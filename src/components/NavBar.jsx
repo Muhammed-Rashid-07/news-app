@@ -7,18 +7,18 @@ const NavBar = () => {
     const [toggle, setToggle] = useState(false);
     return (
         <nav className='w-full flex h-[6.5rem] items-center bg-white text-dimwhite justify-evenly text-[20px] fixed'>
-            <a href='/'>
+            <NavLink to='/'>
                 <img src="https://img.freepik.com/premium-vector/news-soon-logo_720688-25.jpg?w=2000" className='w-[150px] h-[104px]' alt="" />
-            </a>
+            </NavLink>
 
             <ul className='list-none sm:flex hidden px-10'>
                 {navLink.map((data) => (
                     <li key={data.id} className='ml-10 font-poppins'>
-                        <a href='/'>{data.title}</a></li>
+                        <NavLink to={`/${data.id}`}>{data.title}</NavLink></li>
                 ))}
 
             </ul>
-            <a href='#' className='font-bold sm:flex hidden'>Login</a>
+            <NavLink to='/login' className='font-bold sm:flex hidden'>Login</NavLink>
 
             <div className='sm:hidden flex flex-1 justify-end items-center mr-[20px]'>
                 <img src={toggle ? close : menu} alt="menu" className='w-[50px] h-[50px] object-contain' onClick={() => { setToggle(prev => !prev) }} />
@@ -27,11 +27,11 @@ const NavBar = () => {
                         {navLink.map((data, index) => (
                             <li className={`font-normal font-poppins
                             cursor-pointer mr-10 text-[20px] ${index === navLink.length ? 'mb-0' : 'mb-4  '}`} key={data.id}>
-                                <a href={`${data.id}`} className='text-black'>{data.title}</a>
+                                <NavLink to={`${data.id}`} className='text-black'>{data.title}</NavLink>
                             </li>
                         ))}
                         <li className='font-normal text-[20px] font-poppins mr-[35px] '>
-                            <a href='/' className='font-bold'>Login</a></li>
+                            <NavLink to='/' className='font-bold'>Login</NavLink></li>
                     </ul>
 
                 </div>

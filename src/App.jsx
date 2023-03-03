@@ -1,17 +1,28 @@
 import React from 'react'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import Card from './components/Card'
-import NavBar from './components/NavBar'
-
+import { HashRouter, Route, Routes } from 'react-router-dom'
+import NewsPage2 from './components/NewsPage'
+import Notfound from './components/Notfound'
+import Screen from './components/Screen'
 
 const App = () => {
   return (
-    <div>
-      <NavBar />
-      <Card />
-    </div>
+
+    <Routes>
+      <Route path='/' element={<Screen />} />
+      <Route path='*' element={<Notfound/>} />
+      <Route path='/pages' element={<NewsPage2/>} />
+    </Routes>
+
 
   )
 }
 
-export default App
+function WrappedApp() {
+  return (
+    <HashRouter>
+      <App />
+    </HashRouter>
+  );
+}
+
+export default WrappedApp
