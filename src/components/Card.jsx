@@ -9,7 +9,7 @@ const Card = () => {
             <h2 className='lg:mr-auto text-[42px] font-poppins mb-5'>Editorails</h2>
             <div className='lg:grid grid-cols-3 mr-5 sm:flex-1 first-letter: flex flex-col justify-start items-center'>
                 {news.map((data) => (
-                    <div key={data.id} className="w-[350px] h-[93%] rounded-[10px] overflow-hidden shadow-lg ml-5 border-[1px] border-solid object-contain border-grey-900 sm:mb-5 only:">
+                    <div key={data.id} className="transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-40 hover:bg-white duration-300 w-[350px] h-[93%] rounded-[10px] overflow-hidden shadow-lg ml-5 border-[1px] border-solid object-contain border-grey-900 sm:mb-5 only:">
                         <Link to='/pages' state={{from:`${data.id}`}}>
                             <img className="w-full h-[200px] cursor-pointer" src={data.img} alt="" />
                         </Link>

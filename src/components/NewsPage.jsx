@@ -11,7 +11,7 @@ const NewsPage = () => {
   return (
     <section>
       <NavBar />
-      <div className='lg:flex max-w-[100%] h-[400px] pt-[150px] justify-center mr-[50px]'>
+      <div className='lg:flex max-w-[100%] h-[400px] pt-[150px] justify-start mr-[50px]'>
         <div className='container'>
           <div className='row'>
             <div className='lg:flex flex-col lg:ml-72 sm:items-center'>
@@ -37,10 +37,13 @@ const NewsPage = () => {
         <div className='mt-[15px] mr-[50px] lg:flex flex-col sm:items-center'>
           <h2 className='text-[32px]  mb-5'>Read This Next</h2>
           {news.map((data) => (
-            <div key={data.id} className='max-w-[200px]  hover:animate-bounce px-5 py-6 rounded-md bg-dimBlue flex flex-col sm:items-center mb-5'>
+            <div key={data.id} className='flex flex-col flex-1
+            transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110 hover:bg-white duration-300
+            max-w-[300px] px-5 py-6 rounded-md bg-dimBlue flex flex-col sm:items-center mb-5'>
               <Link to='/pages'  state={{from:`${data.id}`}} className='hover:text-blue-600'>
               <h1 >{data.id===from?'':data.title}</h1>
               </Link>
+              <p className='mt-[10px] mr-auto text-[12px]'>{data.time}</p>
             </div>
           ))}
 
