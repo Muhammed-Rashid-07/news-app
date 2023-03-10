@@ -31,7 +31,7 @@ const NavBar = () => {
                             </li>
                         ))}
                         <li className='font-normal text-[20px] font-poppins mr-[35px] '>
-                            <NavLink to='/' className='font-bold'>Login</NavLink></li>
+                            <NavLink to='/' className='font-bold'>signup</NavLink></li>
                     </ul>
 
                 </div>

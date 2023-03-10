@@ -3,6 +3,7 @@ import React from 'react'
 import { news } from '../constants'
 import { Link } from 'react-router-dom'
 
+
 const Card = () => {
     return (
         <section className='flex flex-col bg-gray-200 pt-[150px] px-52 items-center'>
